@@ -14,7 +14,7 @@ export default function Component() {
                 />
                 <span className="sr-only">WAFIOS</span>
             </Link>
-            <nav className="flex gap-4 mt-4 md:mt-0">
+            {/* <nav className="flex gap-4 mt-4 md:mt-0">
                 <Link
                     href="#"
                     className="text-sm hover:underline"
@@ -29,7 +29,7 @@ export default function Component() {
                 >
                     Terms &amp; Conditions
                 </Link>
-            </nav>
+            </nav> */}
         </footer>
     );
 }
