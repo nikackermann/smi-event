@@ -2,6 +2,10 @@
 
 import { revalidatePath } from 'next/cache';
 import { sql } from '@vercel/postgres';
+import { EmailTemplate } from '@/emails';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export type AttendeeState = 'REGISTERED' | 'INVOICED' | 'PAID';
 
@@ -47,6 +51,17 @@ export async function addAttendee(attendee: Omit<Attendee, 'id' | 'state'>) {
       `;
 
         const newId = rows[0].id;
+
+        // Send confirmation email
+        await resend.emails.send({
+            from: 'WAFIOS | Training Course <event@updates.wafios.online>', // Replace with your verified domain
+            to: [attendee.email],
+            subject: 'Welcome to the Spring End Grinding Training Course',
+            react: EmailTemplate({
+                first_name: attendee.first_name,
+                last_name: attendee.last_name,
+            }),
+        });
         revalidatePath('/event-signups');
         return newId;
     } catch (error) {

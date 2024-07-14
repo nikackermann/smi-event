@@ -9,7 +9,7 @@ export default function Component() {
                     About the Training Course
                 </h2>
                 <p className="text-muted-foreground mt-2">
-                    Learn more about the Spring End Grinding Training Course.
+                    Learn more about the training course.
                 </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
