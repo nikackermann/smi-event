@@ -25,7 +25,7 @@ export default function Component() {
                     <CardHeader>
                         <CardTitle>Non-SMI Member</CardTitle>
                         <CardDescription>
-                            For companies not part of the SMI program.
+                            General admission ticket.
                         </CardDescription>
                     </CardHeader>
                     <CardContent className="grid gap-4">
@@ -54,9 +54,9 @@ export default function Component() {
                 <Card className="bg-card text-card-foreground">
                     <CardHeader>
                         <CardTitle>SMI Member</CardTitle>
-                        <CardDescription>
+                        {/* <CardDescription>
                             For companies part of the SMI program.
-                        </CardDescription>
+                        </CardDescription> */}
                     </CardHeader>
                     <CardContent className="grid gap-4">
                         <div className="grid gap-1">
