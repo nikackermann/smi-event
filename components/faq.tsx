@@ -99,11 +99,12 @@ export default function Component() {
                 </Card>
                 <Card className="bg-background p-6 rounded-lg border shadow-md">
                     <h3 className="text-xl font-bold">
-                        Hotel booking information
+                        Where can I book accommodation for the course?
                     </h3>
-                    <div className="text-muted-foreground mt-4 p-4 bg-gray-100 rounded-lg">
-                        <h3 className="text-lg font-semibold text-primary mb-2">
-                            Accommodation Information
+                    <div className="text-muted-foreground mt-4 rounded-lg">
+                        <h3 className="text-muted-foreground mb-3">
+                            We've partnered with a nearby hotel for your
+                            convenience:
                         </h3>
 
                         <p className="mb-2">
