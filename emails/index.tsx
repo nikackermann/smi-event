@@ -71,12 +71,12 @@ export const EmailTemplate = ({ first_name, last_name }: Props) => (
         </Preview>
         <Body style={main}>
             <Container style={container}>
-                {/* <Img
+                <Img
                     src="https://sagd.wafios.online/static/logo.png"
                     width="170"
                     alt="WAFIOS"
                     style={logo}
-                /> */}
+                />
                 <Text style={paragraph}>
                     Dear {first_name} {last_name},
                 </Text>
@@ -123,12 +123,12 @@ export const EmailTemplate = ({ first_name, last_name }: Props) => (
                     The event is located at 9830 190th St, Unit D Mokena, IL
                     60448. Ample parking is available at the venue.
                 </Text>
-                {/* <Link
+                <Link
                     href="https://www.google.com/maps/search/?api=1&query=9830+190th+St%2C+Unit+D+Mokena%2C+IL+60448"
                     style={button}
                 >
                     View on Google Maps
-                </Link> */}
+                </Link>
                 <Hr style={hr} />
                 <Heading style={heading}>Contact Information</Heading>
                 <Text style={paragraph}>
