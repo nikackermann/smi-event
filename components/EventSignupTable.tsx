@@ -12,6 +12,8 @@ import { getAttendees } from '@/app/actions';
 import { AttendeeActionMenu } from './AttendeeActionMenu';
 import { Toaster } from 'sonner';
 
+export const dynamic = 'force-dynamic';
+
 export async function EventSignupTable() {
     const attendees = await getAttendees();
 
