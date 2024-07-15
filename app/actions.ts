@@ -54,7 +54,7 @@ export async function addAttendee(attendee: Omit<Attendee, 'id' | 'state'>) {
 
         // Send confirmation email
         await resend.emails.send({
-            from: 'WAFIOS | Training Course <events@noreply.wafios.us>', // Replace with your verified domain
+            from: 'WAFIOS | Training Course <noreply@notifications.wafios.us>', // Replace with your verified domain
             to: [attendee.email],
             subject: 'Welcome to the Spring End Grinding Training Course',
             react: EmailTemplate({
