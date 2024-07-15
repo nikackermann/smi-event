@@ -86,3 +86,28 @@ export async function updateAttendeeStatus(
         throw new Error('Failed to update attendee status');
     }
 }
+
+export async function exportRegistrationsToCSV() {
+    try {
+        const { rows } = await sql`
+        SELECT * FROM spring_end_grinding_course
+        ORDER BY id ASC
+      `;
+
+        const attendees = rows as Attendee[];
+
+        // CSV header
+        let csvContent =
+            'ID,First Name,Last Name,Email,Phone,Company,Job Title,Tickets Purchased,State\n';
+
+        // Add data rows
+        attendees.forEach((attendee) => {
+            csvContent += `${attendee.id},${attendee.first_name},${attendee.last_name},${attendee.email},${attendee.phone},${attendee.company},${attendee.job_title},${attendee.tickets_purchased},${attendee.state}\n`;
+        });
+
+        return csvContent;
+    } catch (error) {
+        console.error('Failed to export registrations:', error);
+        throw new Error('Failed to export registrations');
+    }
+}
