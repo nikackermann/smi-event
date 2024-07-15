@@ -71,12 +71,12 @@ export const EmailTemplate = ({ first_name, last_name }: Props) => (
         </Preview>
         <Body style={main}>
             <Container style={container}>
-                <Img
+                {/* <Img
                     src="https://sagd.wafios.online/static/logo.png"
                     width="170"
                     alt="WAFIOS"
                     style={logo}
-                />
+                /> */}
                 <Text style={paragraph}>
                     Dear {first_name} {last_name},
                 </Text>
