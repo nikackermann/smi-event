@@ -237,8 +237,8 @@ export default function ReactHookForm() {
                                 After registration, you will receive an email
                                 with further details. Our accounts department
                                 will contact you regarding the invoice for your
-                                ticket purchase. Payment is due within 30 days
-                                of invoice receipt.
+                                ticket purchase. Payment is due upon invoice
+                                receipt and prior to event.
                             </AlertDescription>
                         </Alert>
                         <Button

@@ -114,8 +114,8 @@ export const EmailTemplate = ({ first_name, last_name }: Props) => (
                 <Heading style={heading}>Payment Information</Heading>
                 <Text style={paragraph}>
                     Our accounts department will be in touch shortly with an
-                    invoice for your course registration. Payment is due within
-                    30 days of receiving the invoice.
+                    invoice for your course registration. Payment is due upon
+                    invoice receipt and prior to event.
                 </Text>
                 <Hr style={hr} />
                 <Heading style={heading}>Getting There</Heading>
