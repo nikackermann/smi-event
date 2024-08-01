@@ -4,6 +4,7 @@ import { revalidatePath } from 'next/cache';
 import { sql } from '@vercel/postgres';
 import { EmailTemplate } from '@/emails';
 import { Resend } from 'resend';
+import { unstable_noStore as noStore } from 'next/cache';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -22,6 +23,7 @@ export type Attendee = {
 };
 
 export async function getAttendees(): Promise<Attendee[]> {
+    noStore();
     try {
         const { rows } = await sql`
         SELECT * FROM spring_end_grinding_course
@@ -88,6 +90,7 @@ export async function updateAttendeeStatus(
 }
 
 export async function exportRegistrationsToCSV() {
+    noStore();
     try {
         const { rows } = await sql`
         SELECT * FROM spring_end_grinding_course
@@ -102,12 +105,28 @@ export async function exportRegistrationsToCSV() {
 
         // Add data rows
         attendees.forEach((attendee) => {
-            csvContent += `${attendee.id},${attendee.first_name},${attendee.last_name},${attendee.email},${attendee.phone},${attendee.company},${attendee.job_title},${attendee.tickets_purchased},${attendee.state}\n`;
+            csvContent += `${attendee.id},${escapeCSV(
+                attendee.first_name
+            )},${escapeCSV(attendee.last_name)},${escapeCSV(
+                attendee.email
+            )},${escapeCSV(attendee.phone)},${escapeCSV(
+                attendee.company
+            )},${escapeCSV(attendee.job_title)},${attendee.tickets_purchased},${
+                attendee.state
+            }\n`;
         });
-
         return csvContent;
     } catch (error) {
         console.error('Failed to export registrations:', error);
         throw new Error('Failed to export registrations');
     }
+}
+
+// Helper function to escape and quote CSV fields if necessary
+function escapeCSV(field: string | null): string {
+    if (field == null) return '';
+    if (field.includes(',') || field.includes('"') || field.includes('\n')) {
+        return `"${field.replace(/"/g, '""')}"`;
+    }
+    return field;
 }
