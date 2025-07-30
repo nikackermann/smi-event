@@ -88,12 +88,12 @@ export const EmailTemplate = ({ first_name, last_name }: Props) => (
                 <Hr style={hr} />
                 <Heading style={heading}>Event Details</Heading>
                 <Text style={paragraph}>
-                    <strong>Date:</strong> August 28th, 2024
+                    <strong>Date:</strong> September 23rd, 2025
                     <br />
                     <strong>Time:</strong> 9 AM - 5 PM
                     <br />
-                    <strong>Location:</strong> WAFIOS Midwest Technical Center,
-                    Mokena, IL
+                    <strong>Location:</strong> WAFIOS Machinery Corporation,
+                    Branford, CT
                 </Text>
                 <Hr style={hr} />
                 <Heading style={heading}>What to Expect</Heading>
@@ -120,15 +120,13 @@ export const EmailTemplate = ({ first_name, last_name }: Props) => (
                 <Hr style={hr} />
                 <Heading style={heading}>Getting There</Heading>
                 <Text style={paragraph}>
-                    The event is located at 9830 190th St, Unit D Mokena, IL
-                    60448. Ample parking is available at the venue.
+                    The event is located at WAFIOS Machinery Corporation in
+                    Branford, CT. Ample parking is available at the venue.
                 </Text>
-                <Link
-                    href="https://www.google.com/maps/search/?api=1&query=9830+190th+St%2C+Unit+D+Mokena%2C+IL+60448"
-                    style={button}
-                >
-                    View on Google Maps
-                </Link>
+                <Text style={paragraph}>
+                    <strong>Recommended Accommodation:</strong> Holiday Inn Express,
+                    309 E Main St, Branford, CT for convenient lodging near the venue.
+                </Text>
                 <Hr style={hr} />
                 <Heading style={heading}>Contact Information</Heading>
                 <Text style={paragraph}>

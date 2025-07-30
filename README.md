@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NESMA Event Registration System
+
+A modern event registration system built with Next.js 15, Prisma, and PostgreSQL, designed for WAFIOS training courses.
+
+## Features
+
+- **Event Registration**: Clean, responsive registration form with validation
+- **Photo Release Consent**: GDPR-compliant photo permission tracking
+- **Admin Dashboard**: Protected admin area to manage registrations
+- **Email Notifications**: Automated confirmation emails via Resend
+- **CSV Export**: Export registration data for analysis
+- **Modern Stack**: Next.js 15, Prisma ORM, TypeScript, Tailwind CSS
+
+## Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Database**: PostgreSQL with Prisma ORM
+- **Styling**: Tailwind CSS with Radix UI components
+- **Email**: Resend for transactional emails
+- **Forms**: React Hook Form with Zod validation
+- **Deployment**: Optimized for Vercel
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js 18+ 
+- pnpm (recommended package manager)
+- PostgreSQL database (Vercel Postgres recommended)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone and install dependencies:**
+   ```bash
+   pnpm install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. **Configure environment variables:**
+   Create a `.env.local` file with the following variables:
+   ```env
+   # Database Configuration (Vercel Postgres)
+   POSTGRES_PRISMA_URL="postgresql://username:password@host:port/database?pgbouncer=true&connect_timeout=15"
+   POSTGRES_URL_NON_POOLING="postgresql://username:password@host:port/database?connect_timeout=15"
 
-## Learn More
+   # Email Service (Resend)
+   RESEND_API_KEY="re_your_resend_api_key_here"
 
-To learn more about Next.js, take a look at the following resources:
+   # Basic Auth for Admin Pages
+   BASIC_AUTH_USER="admin"
+   BASIC_AUTH_PASSWORD="your_secure_password_here"
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Set up the database:**
+   ```bash
+   # Generate Prisma client
+   pnpm db:generate
+   
+   # Push schema to database
+   pnpm db:push
+   
+   # Optional: Open Prisma Studio to view data
+   pnpm db:studio
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+4. **Run the development server:**
+   ```bash
+   pnpm dev
+   ```
 
-## Deploy on Vercel
+Open [http://localhost:3000](http://localhost:3000) to see the registration form.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Database Schema
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The application uses two main models:
+
+- **Event**: Stores event information (name, date, location)
+- **EventRegistration**: Stores user registrations with photo release consent
+
+## Available Scripts
+
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm start` - Start production server
+- `pnpm lint` - Run ESLint
+- `pnpm db:generate` - Generate Prisma client
+- `pnpm db:push` - Push schema changes to database
+- `pnpm db:migrate` - Create and run migrations
+- `pnpm db:studio` - Open Prisma Studio
+
+## Admin Features
+
+Access the admin dashboard at `/event-signups` (requires basic auth):
+
+- View all registrations in a table format
+- Export registration data as CSV
+- Track photo release permissions
+- Manage registration status
+
+## Deployment
+
+### Vercel (Recommended)
+
+1. Connect your GitHub repository to Vercel
+2. Add environment variables in Vercel dashboard
+3. Deploy automatically on push to main branch
+
+The build process will automatically generate the Prisma client during deployment.
+
+## Security Features
+
+- Server-side form processing with Zod validation
+- Basic authentication for admin areas
+- SQL injection prevention via Prisma ORM
+- CSRF protection through Next.js
+
+## Support
+
+For questions or issues, contact the development team or refer to the documentation:
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Prisma Documentation](https://www.prisma.io/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)

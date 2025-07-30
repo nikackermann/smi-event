@@ -1,151 +1,189 @@
-import { Card } from './ui/card';
+import { Card } from "./ui/card";
 /* eslint-disable react/no-unescaped-entities */
 
 export default function Component() {
-    return (
-        <div className="col-span-2 space-y-6">
-            <div>
-                <h2 className="text-2xl md:text-3xl font-bold">FAQ</h2>
-                <p className="text-muted-foreground mt-2">
-                    Frequently asked questions about the training course.
+  return (
+    <div className="space-y-12">
+      <div className="text-center max-w-3xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
+          Frequently Asked Questions
+        </h2>
+        <p className="text-lg text-muted-foreground text-pretty">
+          Everything you need to know about the training course
+        </p>
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <Card className="card-enhanced p-8">
+          <div className="space-y-6">
+            <div className="space-y-3">
+              <h3 className="text-xl font-semibold text-foreground">
+                What is the format of the course?
+              </h3>
+              <div className="w-12 h-1 bg-gradient-to-r from-brand-500 to-electricGreen rounded-full"></div>
+            </div>
+            <div className="space-y-4 text-muted-foreground">
+              <p className="leading-relaxed">
+                Our Spring End Grinding Training Course is designed as a
+                comprehensive theoretical learning experience focusing on
+                in-depth knowledge transfer and technical understanding.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-brand-500 mt-2.5"></div>
+                  <div>
+                    <span className="font-semibold text-foreground">
+                      Theoretical Content:
+                    </span>{" "}
+                    Comprehensive coverage of spring end grinding processes,
+                    machinery specifications, technology principles, and
+                    automation systems.
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-brand-500 mt-2.5"></div>
+                  <div>
+                    <span className="font-semibold text-foreground">
+                      Technical Deep-Dive:
+                    </span>{" "}
+                    Process parameters, influencing factors, optimization
+                    strategies, and software applications.
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-brand-500 mt-2.5"></div>
+                  <div>
+                    <span className="font-semibold text-foreground">
+                      Interactive Discussions:
+                    </span>{" "}
+                    Q&A sessions, case studies, and technical problem-solving
+                    discussions.
+                  </div>
+                </li>
+              </ul>
+              <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg">
+                <p className="text-sm font-medium text-amber-800 mb-1">
+                  Important Note:
                 </p>
+                <p className="text-sm text-amber-700">
+                  This course will not include practical demonstrations on the
+                  machine. The focus is on providing comprehensive theoretical
+                  knowledge and technical understanding.
+                </p>
+              </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Card className="bg-background p-6 rounded-lg border shadow-md">
-                    <h3 className="text-xl font-bold">
-                        What is the format of the course?
-                    </h3>
-                    <div className="space-y-4 text-muted-foreground mt-4">
-                        <p>
-                            Our course is designed to provide a comprehensive
-                            learning experience, balancing theoretical knowledge
-                            with hands-on practice. The format is structured as
-                            follows:
-                        </p>
-                        <ul className="list-disc pl-6 space-y-2">
-                            <li>
-                                <span className="font-semibold">
-                                    Theoretical Content (2/3 of the course):
-                                </span>{' '}
-                                Covering in-depth knowledge of spring end
-                                grinding processes, machinery, technology, and
-                                automation.
-                            </li>
-                            <li>
-                                <span className="font-semibold">
-                                    Practical Application (1/3 of the course):
-                                </span>{' '}
-                                Participants get hands-on experience with our
-                                state-of-the-art grinder and loading system.
-                            </li>
-                        </ul>
-                        <p>
-                            This balanced approach ensures that attendees not
-                            only understand the principles behind spring end
-                            grinding but also gain valuable practical skills
-                            they can apply in their work environments.
-                        </p>
-                    </div>
-                </Card>
-                <Card className="bg-background p-6 rounded-lg border shadow-md">
-                    <h3 className="text-xl font-bold">
-                        Who should attend the course?
-                    </h3>
-                    <div className="space-y-4 text-muted-foreground mt-4">
-                        <p>
-                            The Spring End Grinding Training Course is designed
-                            to be relevant and valuable for all professionals
-                            involved in the grinding process, including:
-                        </p>
-                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                            {[
-                                'Operators',
-                                'Engineers',
-                                'Technicians',
-                                'Quality Control Specialists',
-                                'Production Managers',
-                                'R&D Personnel',
-                                'Process Improvement Specialists',
-                            ].map((role) => (
-                                <li
-                                    key={role}
-                                    className="flex items-center space-x-2"
-                                >
-                                    <svg
-                                        className="w-5 h-5 text-green-500"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            d="M5 13l4 4L19 7"
-                                        ></path>
-                                    </svg>
-                                    <span>{role}</span>
-                                </li>
-                            ))}
-                        </ul>
-                        <p>
-                            Whether you're hands-on with the machinery or
-                            overseeing operations, this course offers insights
-                            and skills that can enhance your understanding and
-                            contribution to the grinding process.
-                        </p>
-                    </div>
-                </Card>
-                <Card className="bg-background p-6 rounded-lg border shadow-md">
-                    <h3 className="text-xl font-bold">
-                        Where can I book accommodation for the course?
-                    </h3>
-                    <div className="text-muted-foreground mt-4 rounded-lg">
-                        <h3 className="text-muted-foreground mb-3">
-                            We've partnered with a nearby hotel for your
-                            convenience:
-                        </h3>
-
-                        <p className="mb-2">
-                            <strong>Partner Hotel:</strong> EVEN Hotel
-                            Chicago-Tinley Park Conv Center
-                        </p>
-
-                        <p className="mb-2">
-                            <strong>WAFIOS Rate:</strong> $112++ per night
-                            (Jan-Dec 2024)
-                        </p>
-
-                        <p className="mb-2">
-                            <strong>Amenities:</strong> Free Wi-Fi, Parking, 5.9
-                            miles from WAFIOS
-                        </p>
-
-                        <p className="mb-2">
-                            <strong>Booking:</strong>{' '}
-                            <a
-                                href="https://www.ihg.com/evenhotels/hotels/us/en/tinley-park/chitn/hoteldetail?fromRedirect=true&qSrt=sBR&qIta=99502056&icdv=99502056&qSlH=CHITN&qCpid=100269073&qAAR=IP7WM&qRtP=IP7WM&setPMCookies=true&qSHBrC=VN&qDest=18501%20Convention%20Center%20Drive%2C%20Tinley%20Park%2C%20IL%2C%20US&srb_u=1"
-                                className="text-blue-600 hover:underline"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Click here to book with WAFIOS rate
-                            </a>
-                        </p>
-
-                        <p>
-                            <strong>Contact:</strong> 1-708-444-1100 or{' '}
-                            <a
-                                href="mailto:evenhotel@eventpcc.com"
-                                className="text-blue-600 hover:underline"
-                            >
-                                evenhotel@eventpcc.com
-                            </a>
-                        </p>
-                    </div>
-                </Card>
+          </div>
+        </Card>
+        <Card className="card-enhanced p-8">
+          <div className="space-y-6">
+            <div className="space-y-3">
+              <h3 className="text-xl font-semibold text-foreground">
+                Who should attend the course?
+              </h3>
+              <div className="w-12 h-1 bg-gradient-to-r from-brand-500 to-electricGreen rounded-full"></div>
             </div>
-        </div>
-    );
+            <div className="space-y-4 text-muted-foreground">
+              <p className="leading-relaxed">
+                The Spring End Grinding Training Course is designed to be
+                relevant and valuable for all professionals involved in the
+                grinding process, including:
+              </p>
+              <div className="grid grid-cols-1 gap-3">
+                {[
+                  "Operators",
+                  "Engineers",
+                  "Technicians",
+                  "Quality Control Specialists",
+                  "Production Managers",
+                  "R&D Personnel",
+                  "Process Improvement Specialists",
+                ].map((role) => (
+                  <div
+                    key={role}
+                    className="flex items-center gap-3 p-2 rounded-lg bg-muted/30 border border-border/50"
+                  >
+                    <svg
+                      className="w-4 h-4 text-electricGreen flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    <span className="text-sm font-medium text-foreground">
+                      {role}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <p className="leading-relaxed text-sm">
+                Whether you're hands-on with the machinery or overseeing
+                operations, this course offers insights and skills that can
+                enhance your understanding and contribution to the grinding
+                process.
+              </p>
+            </div>
+          </div>
+        </Card>
+        <Card className="card-enhanced p-8 lg:col-span-2">
+          <div className="space-y-6">
+            <div className="space-y-3">
+              <h3 className="text-xl font-semibold text-foreground">
+                Where can I book accommodation for the course?
+              </h3>
+              <div className="w-12 h-1 bg-gradient-to-r from-brand-500 to-electricGreen rounded-full"></div>
+            </div>
+            <div className="text-muted-foreground space-y-4">
+              <p className="leading-relaxed">
+                We recommend the following hotel for your convenience:
+              </p>
+              <div className="bg-blue-50 border border-blue-200 p-6 rounded-lg">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-blue-900 text-lg">
+                      Holiday Inn Express
+                    </h4>
+                    <div className="space-y-2 text-sm text-blue-800">
+                      <p>
+                        <span className="font-medium">Address:</span> 309 E Main
+                        St, Branford, CT
+                      </p>
+                      <p>
+                        <span className="font-medium">Amenities:</span> Free
+                        Wi-Fi, Parking
+                      </p>
+                      <p>
+                        <span className="font-medium">Location:</span>{" "}
+                        Convenient to WAFIOS facility
+                      </p>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <h5 className="font-medium text-blue-900">
+                      Booking Information
+                    </h5>
+                    <div className="text-sm text-blue-800 space-y-1">
+                      <p>Contact the hotel directly for reservations</p>
+                      <p>
+                        Mention the WAFIOS training course for potential group
+                        rates
+                      </p>
+                      <p>
+                        Check hotel website for current rates and availability
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Card>
+      </div>
+    </div>
+  );
 }
