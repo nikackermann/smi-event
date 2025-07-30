@@ -39,7 +39,7 @@ export default function Component() {
               </p>
               <div className="bg-muted/30 p-4 rounded-lg border border-border/50">
                 <p className="text-sm font-medium text-foreground mb-1">
-                  What You'll Receive
+                  What You&apos;ll Receive
                 </p>
                 <p className="text-sm text-muted-foreground">
                   Each participant receives a detailed training handout and

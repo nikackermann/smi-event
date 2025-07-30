@@ -141,7 +141,7 @@ export default function Component() {
         <div className="bg-muted/30 border border-border/50 rounded-lg p-6">
           <div className="space-y-3 text-center">
             <h3 className="text-lg font-semibold text-foreground">
-              What's Included
+              What&apos;s Included
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
               <div className="flex items-center gap-2 justify-center sm:justify-start">
