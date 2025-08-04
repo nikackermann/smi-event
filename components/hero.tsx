@@ -30,16 +30,15 @@ export default function Component() {
       </div>
       <section className="w-full py-16 md:py-20 lg:py-24 text-white relative overflow-hidden min-h-[500px] md:min-h-[600px] bg-gradient-to-br from-brand-600 to-brand-800">
         {/* Video background with proper fallback */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <video
             autoPlay
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ minWidth: "100%", minHeight: "100%" }}
+            className="w-full h-full object-cover scale-105"
           >
-            <source src="/hero-video.mp4" type="video/mp4" />
+            <source src="/hero-video-compressed.mp4" type="video/mp4" />
           </video>
           {/* Dark overlay to ensure text readability */}
           <div className="absolute inset-0 bg-gradient-to-br from-brand-600/70 to-brand-800/70"></div>

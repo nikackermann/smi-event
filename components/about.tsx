@@ -61,7 +61,7 @@ export default function Component() {
             <div className="flex items-start gap-6">
               <Avatar className="h-20 w-20 overflow-hidden rounded-full ring-2 ring-border/50">
                 <AvatarImage
-                  src="/simon.png"
+                  src="/simon.webp"
                   className="object-cover h-full w-full"
                 />
                 <AvatarFallback className="text-lg font-medium">
