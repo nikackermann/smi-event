@@ -68,9 +68,6 @@ export default function Component() {
                   Lunch Provided
                 </span>
               </div>
-              <div className="text-sm text-muted-foreground">
-                50% of revenue supports NESMA educational programs
-              </div>
             </div>
           </CardContent>
         </Card>
@@ -130,9 +127,6 @@ export default function Component() {
                 <span className="text-sm font-medium text-brand-800">
                   Lunch Provided
                 </span>
-              </div>
-              <div className="text-sm text-brand-700">
-                50% of revenue supports NESMA educational programs
               </div>
             </div>
           </CardContent>
